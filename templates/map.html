@@ -2,7 +2,7 @@
 <html lang="{{lang}}">
   <head>
     <meta charset="utf-8">
-    <title>Pokémon Go Map</title>
+    <title>PokeFURY GoMap</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -37,13 +37,13 @@
       <!-- Header -->
       <header id="header">
         <a href="#nav"><span class="label">Options</span></a>
-        <h1><a href="#">Pokémon Go Map</a></h1>
+        <h1><a href="#">PokeFURY GoMap</a></h1>
         <a href="#stats" id="statsToggle" class="statsNav" style="float: right;"><span class="label">Stats</span></a>
       </header>
       <!-- NAV -->
       <nav id="nav">
         <div id="nav-accordion">
-          <h3>Marker Settings</h3>
+          <h3>Marqueurs</h3>
           <div>
             <div class="form-control switch-container">
               <h3>Pokémon</h3>
@@ -77,12 +77,12 @@
             </div>
             <div class="form-control switch-container" id="lured-pokestops-only-wrapper" style="display:none">
               <select name="lured-pokestops-only-switch" id="lured-pokestops-only-switch">
-                <option value="0">All</option>
-                <option value="1">Only Lured</option>
+                <option value="0">Tous</option>
+                <option value="1">Lures actifs</option>
               </select>
             </div>
             <div class="form-control switch-container">
-              <h3>Scanned Locations</h3>
+              <h3>Debug</h3>
               <div class="onoffswitch">
                 <input id="scanned-switch" type="checkbox" name="scanned-switch" class="onoffswitch-checkbox">
                 <label class="onoffswitch-label" for="scanned-switch">
@@ -103,7 +103,7 @@
             </div>
             <div class="form-control">
               <label for="exclude-pokemon">
-              <h3>Hide Pokémon</h3>
+              <h3>Masquer des Pokémons</h3>
               <div style="max-height:165px;overflow-y:auto">
                 <select id="exclude-pokemon" multiple="multiple"></select>
               </div>
@@ -111,16 +111,16 @@
             </div>
           </div>
 
-          <h3>Location Settings</h3>
+          <h3>Position</h3>
           <div>
             <div class="form-control switch-container" style="display:{{is_fixed}}" >
               <label for="next-location">
-              <h3>Change scan location</h3>
+              <h3>Changer la position</h3>
               <input id="next-location" type="text" name="next-location" placeholder="Change your location">
               </label>
             </div>
             <div class="form-control switch-container" style="display:{{is_fixed}}" >
-              <h3>Lock marker</h3>
+              <h3>Verrouiller le marqueur</h3>
               <div class="onoffswitch">
                 <input id="lock-marker-switch" type="checkbox" name="lock-marker-switch" class="onoffswitch-checkbox" checked/>
                 <label class="onoffswitch-label" for="lock-marker-switch">
@@ -130,7 +130,7 @@
               </div>
             </div>
             <div class="form-control switch-container" style="display:{{is_fixed}}" >
-              <h3>Scan follows location</h3>
+              <h3>Suivez-moi</h3>
               <div class="onoffswitch">
                 <input id="geoloc-switch" type="checkbox" name="geoloc-switch" class="onoffswitch-checkbox" checked/>
                 <label class="onoffswitch-label" for="geoloc-switch">
@@ -140,7 +140,7 @@
               </div>
             </div>
             <div class="form-control switch-container" >
-              <h3>Start at user's location</h3>
+              <h3>Demarrez a ma position</h3>
               <div class="onoffswitch">
                 <input id="start-at-user-location-switch" type="checkbox" name="start-at-user-location-switch" class="onoffswitch-checkbox" checked/>
                 <label class="onoffswitch-label" for="start-at-user-location-switch">
@@ -150,7 +150,7 @@
               </div>
             </div>
             <div class="form-control switch-container" style="display:{{search_control}}">
-              <h3>Search</h3>
+              <h3>Recherche</h3>
               <div class="onoffswitch">
                 <input id="search-switch" type="checkbox" name="search-switch" class="onoffswitch-checkbox" checked/>
                 <label class="onoffswitch-label" for="search-switch">
@@ -161,11 +161,11 @@
             </div>
           </div>
 
-          <h3>Notification Settings</h3>
+          <h3>Avertissements</h3>
           <div>
             <div class="form-control">
               <label for="notify-pokemon">
-                <h3>Notify of Pokémon</h3>
+                <h3>Pokémons</h3>
                 <div style="max-height:165px;overflow-y:auto">
                   <select id="notify-pokemon" multiple="multiple"></select>
                 </div>
@@ -173,14 +173,14 @@
             </div>
             <div class="form-control">
               <label for="notify-rarity">
-                <h3>Notify of Rarity</h3>
+                <h3>Rareté</h3>
                 <div style="max-height:165px;overflow-y:auto">
                   <select id="notify-rarity" multiple="multiple"></select>
                 </div>
               </label>
             </div>
             <div class="form-control switch-container">
-              <h3>Notify with sound</h3>
+              <h3>Son</h3>
               <div class="onoffswitch">
                 <input id="sound-switch" type="checkbox" name="sound-switch" class="onoffswitch-checkbox" checked>
                 <label class="onoffswitch-label" for="sound-switch">
@@ -191,23 +191,23 @@
             </div>
           </div>
 
-          <h3>Style Settings</h3>
+          <h3>Style</h3>
           <div>
             <div class="form-control switch-container">
-              <h3>Map Style</h3>
+              <h3>Map</h3>
               <select id="map-style"></select>
             </div>
             <div class="form-control switch-container">
-              <h3>Icons</h3>
+              <h3>Icones</h3>
               <select name="pokemon-icons" id="pokemon-icons"></select>
             </div>
             <div class="form-control switch-container">
-              <h3>Icon Size</h3>
+              <h3>Taille des Icones</h3>
               <select name="pokemon-icon-size" id="pokemon-icon-size">
-                <option value="-8">Small</option>
+                <option value="-8">Petit</option>
                 <option value="0">Normal</option>
-                <option value="10">Large</option>
-                <option value="20">X-Large</option>
+                <option value="10">Grand</option>
+                <option value="20">Tres-grand</option>
               </select>
             </div>
           </div>
@@ -216,10 +216,10 @@
       <nav id="stats">
         <div class="switch-container">
           <div class="switch-container">
-            <center><h1 id="stats-pkmn-label">Loading...</h1></center>
+            <center><h1 id="stats-pkmn-label">Chargement...</h1></center>
           </div>
           <div id="pokemonList" style="color: black;"></div>
-          <div><a href="stats">Full Stats</a></div>
+          <div><a href="stats">Plus de Stats</a></div>
           <div class="switch-container">
             <center><h1 id="stats-gym-label"></h1></center>
           </div>
@@ -233,6 +233,15 @@
       <div id="map"></div>
     </div>
     <!-- Scripts -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-81456406-1', 'auto');
+		ga('send', 'pageview');
+	</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.9.1/polyfill.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
